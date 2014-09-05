@@ -52,6 +52,7 @@ angular.module( 'engageApp', [
     ];
 
 $scope.statementEcomData = [
+  {"name":""},
   {"name":"Customer Ph No"},
   {"name":"Customer Email"},
   {"name":"Customer Gender"},
