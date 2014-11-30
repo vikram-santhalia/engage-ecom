@@ -827,6 +827,10 @@ angular.module( 'engageApp', [
       $scope.savedSegments[i]['maxValue'] = $scope.metrics[0].value;
     }
 
+    $scope.inputCondition = {
+      ruleOptions : ""
+    };  
+
     $scope.segmentValue = {
       segmentName : '',
       segmentDesc : ''
@@ -838,6 +842,7 @@ angular.module( 'engageApp', [
         growl.addErrorMessage("Please add a name and description to save your Segment");
       }
       else{
+        $scope.inputCondition.ruleOptions = "";
         var segmentToSave = {
           name: $scope.segmentValue.segmentName,
           desc: $scope.segmentValue.segmentDesc,
@@ -870,6 +875,9 @@ angular.module( 'engageApp', [
         open: true,
         content: $scope.savedSegments[0].desc
       };
+      $scope.display.uploader.queue = [];
+      $rootScope.fbRoot.uploader.queue = [];
+      $rootScope.emailRoot.uploader.queue = [];
       $scope.groups.unshift(tempGroup);
       $scope.savedSegments.splice(0,1);
       growl.addSuccessMessage("Your segment has been Engaged.");

@@ -34,7 +34,7 @@
           data-ng-options="conditions.name for conditions in ruleConditionData" 
           data-ng-model="selectedRules.conditionOptions"
         >
-        <input type="text" class="form-control statement" ng-model="ruleOptions"/>
+        <input type="text" class="form-control statement" ng-model="inputCondition.ruleOptions"/>
         <div class="buttons">
            <div class="add_btn" ng-click="addRule(-1)" ng-disabled="rules.length > 1">
             <img src="./images/p.png" />
